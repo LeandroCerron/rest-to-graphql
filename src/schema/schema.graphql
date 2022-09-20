@@ -1,10 +1,25 @@
 type Query {
-    hello: String!
-    helloWithName(name: String!): String!
-    helloToGraphQLCourse: String!
-    list: [String]
+    seasonList: [Season!]!
+    raceList: [Race!]!
 }
 
-type Mutation {
-    add(value: String!): [String]
+type Season {
+    year: String!,
+    url: String!,
+    urlMobile: String!
+}
+type Race {
+    raceName: String!,
+    circuit: Circuit!
+}
+
+type Circuit {
+    circuitId: String!,
+    circuitName: String!,
+    location: Location!
+}
+
+type Location {
+    locality: String!,
+    country: String!,
 }
